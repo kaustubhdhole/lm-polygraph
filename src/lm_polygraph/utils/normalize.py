@@ -13,7 +13,9 @@ HOST = "http://209.38.249.180:8000"
 
 DEFAULT_CACHE_PATH = f"{pathlib.Path(__file__).parent.resolve()}/normalization"
 
-
+if not os.path.exists(DEFAULT_CACHE_PATH):
+    os.mkdir(DEFAULT_CACHE_PATH)
+    
 def normalization_bounds_present(
     est: Estimator,
     model_path: str,
